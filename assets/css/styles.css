@@ -1,0 +1,64 @@
+#content {
+    overflow: scroll;
+    }
+
+body {
+
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: bolder;
+    background-image: url(../images/snowbird.png);
+}
+
+.navbar-brand {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: bolder;
+}
+
+.bg-light {
+    background-color: transparent!important;
+}
+
+.input-group.mb-3 {
+    position: fixed;
+    top: 40%;
+    width: 85%;
+}
+.navbar-light .navbar-brand {
+    color: white!important;
+    transition: 0.5s!important;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: bolder!important;
+}
+
+h3, h2 {
+    transition: 0.5s!important;
+    font-weight: bolder!important;
+}
+
+h3:hover {
+    color: #585f4e;
+}
+
+.navbar-light .navbar-brand:hover {
+    color:#585f4e!important;
+    font-size: 1.25em!important;
+}
+
+.search_results {
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: bolder;
+}
+
+
+
+/* all these styles have been deleted
+ <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="find me a trail..." aria-label="Recipient's username" aria-describedby="button-addon2" id="main_search">
+            <div class="input-group-append">
+                  <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="fas fa-search"></i></button>
+            </div>
+            </div>
+*/
