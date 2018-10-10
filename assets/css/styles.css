@@ -19,9 +19,7 @@ body {
 }
 
 .input-group.mb-3 {
-    position: fixed;
-    top: 40%;
-    width: 85%;
+    margin-top: 10%;
 }
 .navbar-light .navbar-brand {
     color: white!important;
