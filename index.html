@@ -24,24 +24,16 @@
         <br>
 
     </nav>
-<!-- HERE IS OUR DROP-DOWN INPUT GROUP-->
-    <div class="input-group mb-3">
-        <select class="custom-select" id="inputGroupSelect02">
-          <option selected>Choose...</option>
-          <option value="1" data-lat="40.760841" data-long="-111.9583778">Snowbird</option>
-          <option value="2" data-lat="37.3222826" data-long="-113.1833182">Zions National Park</option>
-          <option value="3" data-lat="38.5744302" data-long="-109.5689281">Moab</option>
-        </select>
-        <div class="input-group-append">
-          <label class="input-group-text" for="inputGroupSelect02">Options</label>
+<!-- HERE IS OUR INPUT GROUP-->
+    <form>
+        <label for="autocomplete">Where are you looking for trails?</label>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Type your location" aria-describedby="button-search" id="autocomplete">
+            <div class="input-group-append">
+                <button class="btn btn-secondary" type="button" id="button-search">Let's Go Hiking!</button>
+            </div>
         </div>
-      </div>
-      <form>
-        <div class="form-group">
-            <label for="city">Please choose your city:</label>
-            <input type="text" class="form-control" id="autocomplete" placeholder="Enter City">
-        </div>
-        </form>
+    </form>
 <!-- DIV CLASS SEARCH RESULTS, DISPLAY IS FLEXBOX, CHILD ELEMENTS HAVE FLEX DISPLAY PROPERTIES-->
     <div class="search_results">
         <div class="d-none" id="trail">
