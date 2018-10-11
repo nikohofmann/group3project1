@@ -18,9 +18,6 @@ body {
     background-color: transparent!important;
 }
 
-.input-group.mb-3 {
-    margin-top: 10%;
-}
 .navbar-light .navbar-brand {
     color: white!important;
     transition: 0.5s!important;
