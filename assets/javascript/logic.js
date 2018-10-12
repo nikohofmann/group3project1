@@ -13,10 +13,6 @@ function initAutocomplete() {
       {types: ['geocode'],
       componentRestrictions: {'country': 'us'}
       });
-
-
-  autocomplete.addListener('place_changed', getCoordinates);
-
 };
 
 function getCoordinates() {
@@ -24,22 +20,25 @@ function getCoordinates() {
   place = autocomplete.getPlace();
   placeLat = place.geometry.location.lat();
   placeLng = place.geometry.location.lng();
-  console.log(place.formatted_address + " Lat: " + placeLat + " Lng: " + placeLng);
 };
 
-$("#button-search").on("click", function getTrails() {
-  var hikingAPIKey = "200369551-f5e549a41b82ef52b84c357cbcf68e68";
-  var queryURL = "https://www.hikingproject.com/data/get-trails?lat=" + placeLat + "&lon=" + placeLng + "&maxDistance=30&maxResults=5&key=" + hikingAPIKey
-  $.ajax({
-    url: queryURL,
-    method: "GET"
-  })
-  .then(function(trailsRetrieved) {
-    console.log(trailsRetrieved);
-    trails = trailsRetrieved.trails;
-    console.log(trails);
-    getWeather(trails);
-  });
+$("#inputForm").on("submit", function getTrails(e) {
+  e.preventDefault();
+  if (autocomplete.getPlace()) {
+    getCoordinates();
+    var hikingAPIKey = "200369551-f5e549a41b82ef52b84c357cbcf68e68";
+    var queryURL = "https://www.hikingproject.com/data/get-trails?lat=" + placeLat + "&lon=" + placeLng + "&maxDistance=30&maxResults=5&key=" + hikingAPIKey
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    })
+    .then(function(trailsRetrieved) {
+      console.log(trailsRetrieved);
+      trails = trailsRetrieved.trails;
+      console.log(trails);
+      getWeather(trails);
+    });
+  }
 });
 
 function getWeather(trails) {
