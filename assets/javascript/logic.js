@@ -53,4 +53,5 @@ function getWeather(trails) {
       console.log(weather);
     });
   }
+  initAutocomplete();
 };
