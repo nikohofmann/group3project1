@@ -3,7 +3,8 @@ var place;
 var placeLat;
 var placeLng;
 var trails;
-var weatherArray;
+var weatherArray = [];
+var currentTrailWeather;
 
 function initAutocomplete() {
   // Create the autocomplete object, restricting the search to geographical
@@ -49,9 +50,42 @@ function getWeather(trails) {
       url: queryURL,
       method: "GET"
     })
-    .then(function(weather) {
-      console.log(weather);
+    .then(function(currentTrailWeatherResult) {  
+      console.log(currentTrailWeatherResult);
+      weatherArray.push(currentTrailWeatherResult);
+      console.log(weatherArray);
+      renderTrails();
     });
   }
   initAutocomplete();
 };
+
+function renderTrails() {
+  $("#cards").empty();
+  if(weatherArray.length === trails.length) {
+    $("#cards").empty();
+    for (var i = 0; i < trails.length; i++) {
+      var newRow =  "<div class='row mb-4'>" + 
+                      "<div class='col-sm-6'>" +
+                        "<div class='card'>" + 
+                          "<div class='card-body'>" + 
+                            "<h5 class='card-title'>" + trails[i].name + "</h5>" +
+                            "<p class='card-text'>" + trails[i].summary +
+                            "</p>" +
+                          "</div>" +
+                        "</div>" +
+                      "</div>" +
+                      "<div class='col-sm-6'>" +
+                        "<div class='card'>" + 
+                          "<div class='card-body'>" + 
+                            "<h5 class='card-title'>" + weatherArray[i].main.temp + "</h5>" +
+                            "<p class='card-text'>High: " + weatherArray[i].main.temp_max + " Low: " + weatherArray[i].main.temp_min
+                            "</p>" +
+                          "</div>" +
+                        "</div>" +
+                      "</div>" +
+                    "</div>"
+      $("#cards").append(newRow);
+    }
+  }
+}
