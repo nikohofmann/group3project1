@@ -69,7 +69,7 @@ function renderTrails() {
                         "<div class='card'>" + 
                           "<div class='card-body'>" + 
                             "<h5 class='card-title'>" + trails[i].name + "</h5>" +
-                            "<p class='card-text'>" + trails[i].summary +
+                            "<p class='card-text'>" + trails[i].summary + "<br><br>" + "Difficulty: " + trails[i].difficulty +
                             "</p>" +
                           "</div>" +
                         "</div>" +
@@ -78,7 +78,8 @@ function renderTrails() {
                         "<div class='card'>" + 
                           "<div class='card-body'>" + 
                             "<h5 class='card-title'>" + weatherArray[i].main.temp + "</h5>" +
-                            "<p class='card-text'>High: " + weatherArray[i].main.temp_max + " Low: " + weatherArray[i].main.temp_min
+                            "<h6>" + weatherArray[i].weather[0].description + "</h6>" +
+                            "<p class='card-text'>High: " + weatherArray[i].main.temp_max + " Low: " + weatherArray[i].main.temp_min + " Wind Speed: " + weatherArray[i].wind.speed +
                             "</p>" +
                           "</div>" +
                         "</div>" +
@@ -87,4 +88,9 @@ function renderTrails() {
       $("#cards").append(newRow);
     }
   }
+
+var difficulty = $("<img>").attr("src", "assets/images/difficulty_legend.png");
+$("#legend").html(difficulty);
+
 }
+
