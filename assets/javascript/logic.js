@@ -61,7 +61,6 @@ function getWeather(trails) {
 };
 
 function renderTrails() {
-  $("#cards").empty();
   if(weatherArray.length === trails.length) {
     $("#cards").empty();
     for (var i = 0; i < trails.length; i++) {
