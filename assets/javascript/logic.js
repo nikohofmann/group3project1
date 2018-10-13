@@ -64,27 +64,57 @@ function renderTrails() {
   if(weatherArray.length === trails.length) {
     $("#cards").empty();
     for (var i = 0; i < trails.length; i++) {
-      var newRow =  "<div class='row mb-4'>" + 
-                      "<div class='col-sm-6'>" +
-                        "<div class='card'>" + 
-                          "<div class='card-body'>" + 
-                            "<h5 class='card-title'>" + trails[i].name + "</h5>" +
-                            "<p class='card-text'>" + trails[i].summary +
-                            "</p>" +
-                          "</div>" +
-                        "</div>" +
-                      "</div>" +
-                      "<div class='col-sm-6'>" +
-                        "<div class='card'>" + 
-                          "<div class='card-body'>" + 
-                            "<h5 class='card-title'>" + weatherArray[i].main.temp + "</h5>" +
-                            "<p class='card-text'>High: " + weatherArray[i].main.temp_max + " Low: " + weatherArray[i].main.temp_min
-                            "</p>" +
-                          "</div>" +
-                        "</div>" +
-                      "</div>" +
-                    "</div>"
-      $("#cards").append(newRow);
+        var newRow =  "<div class='card-wrapper'>" +
+        
+        "<div class='heading-wrapper'>" +
+            "<div class='trail-name-wrapper'>" +
+                "<h2>" + trails[i].name + "</h2>" +
+            "</div>" +
+            "<div class='button-wrapper'>" +
+                "<a class='btn btn-light' href=" + trails[i].url + "role='button'>" + "Learn More" + "</a>" +
+            "</div>" +
+        "</div>" +
+
+        "<div class='information-wrapper'>" +
+            "<div class='image-wrapper'>" +
+            "<img src=" + trails[i].imgSqSmall + ">" +
+            "</div>" +
+            "<div class='trail-info-wrapper'>" +
+                "<div>" +
+                    "<div class='summary'>" +
+                        "<p>" + trails[i].summary +
+                        "</p>" + 
+                    "</div>" +
+                    "<hr>" +
+                    "Level of difficulty: " + trails[i].difficulty + "." +
+                    "<hr>" + "Distance: " + trails[i].length + " miles" +
+                    "<hr>" + "Trail Status: " + trails[i].conditionDetails + "." +
+                "</div>" +
+            "</div>" +
+            "<div class='weather-wrapper'>" +
+                
+                "<div class='temp-wrapper'>" +
+                    "<div class='temp-value-wrapper'>" + weatherArray[i].main.temp + "&#176" +
+                "</div>" +
+                "</div>" +
+                "<div class='icon-wrapper'>" +
+                "<img src='http://openweathermap.org/img/w/" + weatherArray[i].weather[0].icon + ".png'>" +
+                "</div>" +
+                "<div class='wind-wrapper'>" +
+                    "<div class='cloud-icon-wrapper'>" +
+                        "<img src='../images/wind.png' alt=''>" +
+                    "</div>" +
+                    "<div class='wind-data-wrapper'>" +
+                        "<p>" + weatherArray[i].wind.speed +" mph" + "</p>" +
+                    "</div>" +
+                "</div>" +    
+                    "<div class='conditions-wrapper'>" +
+                        "<p>" + "Current conditions: " + "<br>" + weatherArray[i].weather[0].main + "." + "</p>" +
+                    "</div>" +
+            "</div>" +
+        "</div>" +
+    "</div>";
+     $("#cards").append(newRow);
     }
   }
 }
