@@ -1,17 +1,19 @@
+
+body {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: bolder;
+    /* background-image: url(snowbird.png); */
+}
+
 #content {
     overflow: scroll;
     }
 
-body {
-
-    font-family: 'M PLUS Rounded 1c', sans-serif;
-    font-weight: bolder;
-    background-image: url(../images/snowbird.png);
-}
-
+/* styles for heading */
 .navbar-brand {
     font-family: 'M PLUS Rounded 1c', sans-serif;
     font-weight: bolder;
+    font-size: 2em;
 }
 
 .bg-light {
@@ -23,37 +25,125 @@ body {
     transition: 0.5s!important;
     font-family: 'M PLUS Rounded 1c', sans-serif;
     font-weight: bolder!important;
+    font-size: 2em!important;
 }
 
-h3, h2 {
-    transition: 0.5s!important;
+.form-control {
+    width: 90%;
+}
+
+h2 {
+    font-size: 1.5em;
+    transition: 1.0s!important;
     font-weight: bolder!important;
 }
 
-h3:hover {
-    color: #585f4e;
-}
-
 .navbar-light .navbar-brand:hover {
-    color:#585f4e!important;
-    font-size: 1.25em!important;
+    color: lightslategray!important;
 }
 
-.search_results {
+
+
+
+/* STYLES FOR CARDS */
+.card-wrapper {
+    width: 95%;
     display: flex;
-    justify-content: space-around;
-    color: white;
-    font-family: 'M PLUS Rounded 1c', sans-serif;
-    font-weight: bolder;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: solid 2px lightgray;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.heading-wrapper {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
+.information-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 5px;
+    padding-bottom: 0px;
+}
 
+.trail-info-wrapper {
+    margin: 10px;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
 
-/* all these styles have been deleted
- <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="find me a trail..." aria-label="Recipient's username" aria-describedby="button-addon2" id="main_search">
-            <div class="input-group-append">
-                  <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="fas fa-search"></i></button>
-            </div>
-            </div>
-*/
+.summary {
+    font-size: 1.3em;
+}
+
+.image-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.image-wrapper > img {
+    width: 225px;
+    border-radius: 10px;
+}
+
+.weather-wrapper {
+    margin: 10px;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.icon-wrapper > img {
+    width: 75px;
+}
+
+.temp-value-wrapper {
+    font-size: 2.5em;
+}
+
+.wind-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    flex-direction: row;
+}
+.wind-data-wrapper {
+    font-size: 1.2em;
+}
+.cloud-icon-wrapper {
+    margin-right: 5px;
+}
+.heading-wrapper {
+    background-color: lightgray;
+}
+/* If someone doesn't like the
+desktop view, go ahead and add a MQ
+in which the information wrapper
+starts with justify-content: space
+between - then for phones we will
+switch it to justify-content: space
+around 
+ */

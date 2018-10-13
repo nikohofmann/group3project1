@@ -12,7 +12,7 @@
 </head>
 <body>
 
-    <!-- TRAIL FINDER LOGO HEADING _ NOT TOTALLY NECESSARY -->
+<!-- TRAIL FINDER LOGO HEADING -->
 <div class="container">   
 
     <nav class="navbar navbar-light bg-light">
@@ -22,18 +22,20 @@
             <br>
         </a>
         <br>
-
     </nav>
+
 <!-- HERE IS OUR INPUT GROUP-->
     <form id="inputForm">
-        <label for="autocomplete">Where are you looking for trails?</label>
+        <label for="autocomplete"></label>
         <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Type your location" aria-describedby="button-search" id="autocomplete">
+            <input type="text" class="form-control" placeholder="enter your location" aria-describedby="button-search" id="autocomplete">
             <div class="input-group-append">
                 <button class="btn btn-secondary" type="submit" id="button-search">Let's Go Hiking!</button>
             </div>
         </div>
     </form>
+
+<!-- OUR DATA WILL GO HERE -->
     <div id="cards"></div>
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
