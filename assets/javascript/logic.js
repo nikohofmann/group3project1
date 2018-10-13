@@ -25,6 +25,7 @@ function getCoordinates() {
 
 $("#inputForm").on("submit", function getTrails(e) {
   e.preventDefault();
+  weatherArray = [];
   if (autocomplete.getPlace()) {
     getCoordinates();
     var hikingAPIKey = "200369551-f5e549a41b82ef52b84c357cbcf68e68";
@@ -63,7 +64,37 @@ function getWeather(trails) {
 function renderTrails() {
   if(weatherArray.length === trails.length) {
     $("#cards").empty();
+    $("body").css('background-color', '#ffffff').css('background-image', 'none');
     for (var i = 0; i < trails.length; i++) {
+        var difficultyDesc;
+        var difficultyImage;
+        console.log(trails[i].difficulty);
+        switch (trails[i].difficulty) {
+            case "green": 
+                difficultyDesc = " Easy: walking with no obstacles and low grades";
+                difficultyImage = "assets/images/green.svg";
+                break;
+            case "greenBlue":
+                difficultyDesc = " Easy/Intermediate: few obstacles, less than 10% grade";
+                difficultyImage = "assets/images/greenBlue.svg";
+                break;
+            case "blue":
+                difficultyDesc = " Intermediate: 10% grade, small rocks and roots, easy scrambling";
+                difficultyImage = "assets/images/blue.svg";
+                break;
+            case "blueBlack":
+                difficultyDesc = " Intermediate/Difficult: 12% grade, medium-sized obstacles with some scrambling";
+                difficultyImage = "assets/images/blueBlack.svg";
+                break;
+            case "black":
+                difficultyDesc = " Difficult: 15% grade, large obstacles, possible scrambling or climbing";
+                difficultyImage = "assets/images/black.svg";
+                break;
+            case "dblack":
+                difficultyDesc = " Extremely Difficult: 20% grade, 15+ inch obstacles, many harder sections";
+                difficultyImage = "assets/images/dblack.svg";
+                break;
+        };
         var newRow =  "<div class='card-wrapper'>" +
         
         "<div class='heading-wrapper'>" +
@@ -86,7 +117,7 @@ function renderTrails() {
                         "</p>" + 
                     "</div>" +
                     "<hr>" +
-                    "Level of difficulty: " + trails[i].difficulty + "." +
+                    "<img src='" + difficultyImage + "' class='difficultyImage'>" + difficultyDesc + "." +
                     "<hr>" + "Distance: " + trails[i].length + " miles" +
                     "<hr>" + "Trail Status: " + trails[i].conditionDetails + "." +
                 "</div>" +
@@ -94,7 +125,7 @@ function renderTrails() {
             "<div class='weather-wrapper'>" +
                 
                 "<div class='temp-wrapper'>" +
-                    "<div class='temp-value-wrapper'>" + weatherArray[i].main.temp + "&#176" +
+                    "<div class='temp-value-wrapper'>" + Math.round(weatherArray[i].main.temp) + "&#176" +
                 "</div>" +
                 "</div>" +
                 "<div class='icon-wrapper'>" +
@@ -102,10 +133,10 @@ function renderTrails() {
                 "</div>" +
                 "<div class='wind-wrapper'>" +
                     "<div class='cloud-icon-wrapper'>" +
-                        "<img src='../images/wind.png' alt=''>" +
+                        "<img src='assets/images/wind.png' alt=''>" +
                     "</div>" +
                     "<div class='wind-data-wrapper'>" +
-                        "<p>" + weatherArray[i].wind.speed +" mph" + "</p>" +
+                        "<p>" + Math.round(weatherArray[i].wind.speed) +" mph" + "</p>" +
                     "</div>" +
                 "</div>" +    
                     "<div class='conditions-wrapper'>" +

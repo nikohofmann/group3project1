@@ -2,12 +2,14 @@
 body {
     font-family: 'M PLUS Rounded 1c', sans-serif;
     font-weight: bolder;
-    /* background-image: url(snowbird.png); */
+    background-image: url(../images/snowbird.png);
+    transition: .5s;
 }
+
 
 #content {
     overflow: scroll;
-    }
+}
 
 /* styles for heading */
 .navbar-brand {
@@ -21,7 +23,7 @@ body {
 }
 
 .navbar-light .navbar-brand {
-    color: white!important;
+    color: lightslategray;
     transition: 0.5s!important;
     font-family: 'M PLUS Rounded 1c', sans-serif;
     font-weight: bolder!important;
@@ -38,9 +40,11 @@ h2 {
     font-weight: bolder!important;
 }
 
-.navbar-light .navbar-brand:hover {
-    color: lightslategray!important;
+.difficultyImage {
+    height: 1.5em;
 }
+
+
 
 
 
