@@ -64,38 +64,6 @@ function renderTrails() {
   if(weatherArray.length === trails.length) {
     $("#cards").empty();
     for (var i = 0; i < trails.length; i++) {
-<<<<<<< HEAD
-      var newRow =  "<div class='row mb-4'>" + 
-                      "<div class='col-sm-6'>" +
-                        "<div class='card'>" + 
-                          "<div class='card-body'>" + 
-                            "<h5 class='card-title'>" + trails[i].name + "</h5>" +
-                            "<p class='card-text'>" + trails[i].summary + "<br><br>" + "Difficulty: " + trails[i].difficulty +
-                            "</p>" +
-                          "</div>" +
-                        "</div>" +
-                      "</div>" +
-                      "<div class='col-sm-6'>" +
-                        "<div class='card'>" + 
-                          "<div class='card-body'>" + 
-                            "<h5 class='card-title'>" + weatherArray[i].main.temp + "</h5>" +
-                            "<h6>" + weatherArray[i].weather[0].description + "</h6>" +
-                            "<p class='card-text'>High: " + weatherArray[i].main.temp_max + " Low: " + weatherArray[i].main.temp_min + " Wind Speed: " + weatherArray[i].wind.speed +
-                            "</p>" +
-                          "</div>" +
-                        "</div>" +
-                      "</div>" +
-                    "</div>"
-      $("#cards").append(newRow);
-    }
-  }
-
-var difficulty = $("<img>").attr("src", "assets/images/difficulty_legend.png");
-$("#legend").html(difficulty);
-
-}
-
-=======
         var newRow =  "<div class='card-wrapper'>" +
         
         "<div class='heading-wrapper'>" +
@@ -150,4 +118,3 @@ $("#legend").html(difficulty);
     }
   }
 }
->>>>>>> origin
