@@ -25,6 +25,7 @@ function getCoordinates() {
 
 $("#inputForm").on("submit", function getTrails(e) {
   e.preventDefault();
+  $(".bg").animate({opacity: 0}, 750);
   weatherArray = [];
   if (autocomplete.getPlace()) {
     getCoordinates();
@@ -64,7 +65,6 @@ function getWeather(trails) {
 function renderTrails() {
   if(weatherArray.length === trails.length) {
     $("#cards").empty();
-    $("body").css('background-color', '#ffffff').css('background-image', 'none');
     for (var i = 0; i < trails.length; i++) {
         var difficultyDesc;
         var difficultyImage;
