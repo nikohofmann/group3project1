@@ -160,6 +160,7 @@ h2 {
 .heading-wrapper {
     background-color: lightgray;
 }
+
 @media only screen and (max-width: 600px) {
     .information-wrapper {
         flex-direction: column;
@@ -189,3 +190,4 @@ h2 {
         font-size: .75em;
     }
 }
+
