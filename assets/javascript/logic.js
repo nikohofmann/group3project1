@@ -25,6 +25,7 @@ function getCoordinates() {
 
 $("#inputForm").on("submit", function getTrails(e) {
   e.preventDefault();
+  $(".bg").animate({opacity: 0}, 750);
   weatherArray = [];
   if (autocomplete.getPlace()) {
     getCoordinates();
@@ -64,7 +65,6 @@ function getWeather(trails) {
 function renderTrails() {
   if(weatherArray.length === trails.length) {
     $("#cards").empty();
-    $("body").css('background-color', '#ffffff').css('background-image', 'none');
     for (var i = 0; i < trails.length; i++) {
         var difficultyDesc;
         var difficultyImage;
@@ -117,16 +117,17 @@ function renderTrails() {
                         "</p>" + 
                     "</div>" +
                     "<hr>" +
+                    "<div class='skill-level'>" +
                     "<img src='" + difficultyImage + "' class='difficultyImage'>" + difficultyDesc + "." +
                     "<hr>" + "Distance: " + trails[i].length + " miles" +
                     "<hr>" + "Trail Status: " + trails[i].conditionDetails + "." +
+                     
                 "</div>" +
             "</div>" +
-            "<div class='weather-wrapper'>" +
-                
+              "</div>" +  
+              "<div class='weather-wrapper'>" +
                 "<div class='temp-wrapper'>" +
                     "<div class='temp-value-wrapper'>" + Math.round(weatherArray[i].main.temp) + "&#176" +
-                "</div>" +
                 "</div>" +
                 "<div class='icon-wrapper'>" +
                 "<img src='http://openweathermap.org/img/w/" + weatherArray[i].weather[0].icon + ".png'>" +
@@ -142,9 +143,7 @@ function renderTrails() {
                     "<div class='conditions-wrapper'>" +
                         "<p>" + "Current conditions: " + "<br>" + weatherArray[i].weather[0].main + "." + "</p>" +
                     "</div>" +
-            "</div>" +
-        "</div>" +
-    "</div>";
+                "</div>";
      $("#cards").append(newRow);
     }
   }
