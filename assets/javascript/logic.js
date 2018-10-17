@@ -102,7 +102,7 @@ function renderTrails() {
                 "<h2>" + trails[i].name + "</h2>" +
             "</div>" +
             "<div class='button-wrapper'>" +
-                "<a class='btn btn-light' href=" + trails[i].url + "role='button'>" + "Learn More" + "</a>" +
+                "<a class='btn btn-light' href=" + trails[i].url + "role='button' target='_blank'>" + "Learn More" + "</a>" +
             "</div>" +
         "</div>" +
 
