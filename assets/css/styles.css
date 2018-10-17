@@ -41,7 +41,7 @@ body {
 
 .navbar-light .navbar-brand {
     color: lightslategray;
-    transition: 0.5s!important;
+    transition: 1s!important;
     font-family: 'M PLUS Rounded 1c', sans-serif;
     font-weight: bolder!important;
     font-size: 2em!important;
@@ -160,12 +160,34 @@ h2 {
 .heading-wrapper {
     background-color: lightgray;
 }
-/* If someone doesn't like the
-desktop view, go ahead and add a MQ
-in which the information wrapper
-starts with justify-content: space
-between - then for phones we will
-switch it to justify-content: space
-around 
- */
+
+@media only screen and (max-width: 600px) {
+    .information-wrapper {
+        flex-direction: column;
+        font-size: .75em;
+    }
+    .temp-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1em;
+    }
+
+    .image-wrapper {
+        margin-top: 7px;
+    }
+}
+@media only screen and (max-width: 330px) {
+    .icon-wrapper > img {
+        width: 50px;
+    }
+    .temp-wrapper {
+        font-size: .75em;
+    }
+}
 

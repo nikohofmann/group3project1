@@ -117,15 +117,15 @@ function renderTrails() {
                         "</p>" + 
                     "</div>" +
                     "<hr>" +
+                    "<div class='skill-level'>" +
                     "<img src='" + difficultyImage + "' class='difficultyImage'>" + difficultyDesc + "." +
                     "<hr>" + "Distance: " + trails[i].length + " miles" +
                 "</div>" +
             "</div>" +
-            "<div class='weather-wrapper'>" +
-                
+              "</div>" +  
+              "<div class='weather-wrapper'>" +
                 "<div class='temp-wrapper'>" +
                     "<div class='temp-value-wrapper'>" + Math.round(weatherArray[i].main.temp) + "&#176" +
-                "</div>" +
                 "</div>" +
                 "<div class='icon-wrapper'>" +
                 "<img src='http://openweathermap.org/img/w/" + weatherArray[i].weather[0].icon + ".png'>" +
@@ -141,9 +141,7 @@ function renderTrails() {
                     "<div class='conditions-wrapper'>" +
                         "<p>" + "Current conditions: " + "<br>" + weatherArray[i].weather[0].main + "." + "</p>" +
                     "</div>" +
-            "</div>" +
-        "</div>" +
-    "</div>";
+                "</div>";
      $("#cards").append(newRow);
     }
   }
