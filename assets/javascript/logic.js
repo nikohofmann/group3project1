@@ -119,7 +119,6 @@ function renderTrails() {
                     "<hr>" +
                     "<img src='" + difficultyImage + "' class='difficultyImage'>" + difficultyDesc + "." +
                     "<hr>" + "Distance: " + trails[i].length + " miles" +
-                    "<hr>" + "Trail Status: " + trails[i].conditionDetails + "." +
                 "</div>" +
             "</div>" +
             "<div class='weather-wrapper'>" +
